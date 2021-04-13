@@ -13,7 +13,7 @@ using TestProject1.Pages;
 
 namespace TestProject1.Steps
 {
-    [Binding] //klasa jest związana ze scenariuszem FEature = MainPage
+    [Binding] //klasa jest związana ze scenariuszem Feature = MainPage
 
     public class MainPageSteps
     {
@@ -27,62 +27,52 @@ namespace TestProject1.Steps
             MainAppPage = new MainPage(Driver);
         }
 
+        //SpecFlow + BDD
         [Given(@"I have opened main page")]
         public void GivenIHaveOpenedMainPage()
         {
-            ScenarioContext.Current.Pending();
+            //Selenium and Driver - C#
+            MainAppPage.Open();
         }
 
         [Then(@"The title of main page is '(.*)'")]
-        public void ThenTheTitleOfMainPageIs(string p0)
+        public void ThenTheTitleOfMainPageIs(string title)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(title, Driver.Title, "Title of a home page is wrong");
         }
 
         [Then(@"The header of main page is '(.*)'")]
-        public void ThenTheHeaderOfMainPageIs(string p0)
+        public void ThenTheHeaderOfMainPageIs(string header)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(header, MainAppPage.MainHeader.Text, "Header of a home page is wrong");
         }
 
         [Given(@"I have scrolled to the down")]
         public void GivenIHaveScrolledToTheDown()
         {
-            ScenarioContext.Current.Pending();
+            MainAppPage.ScrollToTheBottom();
         }
 
         [Then(@"The footer of the main page is '(.*)'")]
-        public void ThenTheFooterOfTheMainPageIs(string p0)
+        public void ThenTheFooterOfTheMainPageIs(string footer)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(footer, MainAppPage.MainFooter.Text, "Footer of a home page is wrong");
         }
 
         [Given(@"I have opened a home page")]
         public void GivenIHaveOpenedAHomePage()
         {
-            ScenarioContext.Current.Pending();
+            MainAppPage.Open();
         }
 
-        [Given(@"Click on the image in the right top")]
-        public void GivenClickOnTheImageInTheRightTop()
+        [Given(@"I have clicked on the image in the right top")]
+        public void GivenIHaveClickedOnTheImageInTheRightTop(string footer)
         {
-            ScenarioContext.Current.Pending();
+            
         }
 
         [Then(@"The image directs us to page '(.*)'")]
         public void ThenTheImageDirectsUsToPage(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Given(@"I habe opened a home page")]
-        public void GivenIHabeOpenedAHomePage()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Given(@"I habe clicked on the footer")]
-        public void GivenIHabeClickedOnTheFooter()
         {
             ScenarioContext.Current.Pending();
         }
@@ -92,6 +82,7 @@ namespace TestProject1.Steps
         {
             ScenarioContext.Current.Pending();
         }
+
 
 
         [AfterScenario]

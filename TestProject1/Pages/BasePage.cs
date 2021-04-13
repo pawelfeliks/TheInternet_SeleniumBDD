@@ -15,5 +15,12 @@ namespace TestProject1.Pages
         {
             Driver = driver;
         }
+
+        public void ScrollToTheBottom()
+        {
+            IJavaScriptExecutor javaScriptExecutor = (IJavaScriptExecutor) Driver;
+
+            javaScriptExecutor.ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
+        }
     }
 }

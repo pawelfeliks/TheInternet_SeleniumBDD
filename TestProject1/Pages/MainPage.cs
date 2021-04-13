@@ -14,6 +14,11 @@ namespace TestProject1.Pages
         {
         }
 
+        public IWebElement MainHeader => Driver.FindElement(By.ClassName("heading"));
+
+        public IWebElement MainFooter => Driver.FindElement(By.XPath("/html/body/div[3]/div/div"));
+        
+
         public void Open()
         {
             Driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/");
