@@ -13,12 +13,12 @@ Scenario: Footer of a home page
 	Given I have opened main page 
 	And I have scrolled to the down
 	Then The footer of the main page is 'Powered by Elemental Selenium'
-
+#OK
 Scenario: Image in the right top 
 	Given I have opened a home page
 	And I have clicked on the image in the right top
 	Then The image directs us to page 'https://github.com/saucelabs/the-internet'
-
+#OK
 Scenario: Link in the footer of a home page
 	Given I have opened a home page
 	And I have scrolled to the down

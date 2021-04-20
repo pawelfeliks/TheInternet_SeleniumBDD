@@ -17,6 +17,7 @@ namespace TestProject1.Steps
         private IWebDriver Driver { get; set; }
         private MainPage MainAppPage { get; set; }
         private GitHubProjectPage GitHubProjectPage { get; set; }
+        private SeleniumPage SeleniumPage { get; set; }
 
         [BeforeScenario]
         public void ScenarioSetup()
@@ -61,18 +62,28 @@ namespace TestProject1.Steps
         {
             MainAppPage.Open();
         }
-
         [Given(@"I have clicked on the image in the right top")]
         public void GivenIHaveClickedOnTheImageInTheRightTop()
         {
             GitHubProjectPage = MainAppPage.NavigateToGitHubProjectPage();
-            //Assert.AreEqual(footer, MainAppPage.LinkFooter.Displayed, "The link in the footer of a home page is not working");
         }
 
         [Then(@"The image directs us to page '(.*)'")]
         public void ThenTheImageDirectsUsToPage(string gitHubProjectUrl)
         {
-            Assert.AreEqual(gitHubProjectUrl, GitHubProjectPage.GetPageUrl(), "Url is incorrect.");
+            Assert.AreEqual(GitHubProjectPage.PageUrl, GitHubProjectPage.GetPageUrl());
+        }
+
+        [Given(@"I have clicked on the footer")]
+        public void GivenIHaveClickedOnTheFooter()
+        {
+            SeleniumPage = MainAppPage.NavigateToSeleniumPage();
+        }
+
+        [Then(@"The footer directs us to page '(.*)'")]
+        public void ThenTheFooterDirectsUsToPage(string seleniumPageUrl)
+        {
+            Assert.AreEqual(seleniumPageUrl, SeleniumPage.GetPageUrl());
         }
 
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using TestProject1.Pages.ExternalPages;
 
 namespace TestProject1.Pages
 {
@@ -16,7 +17,6 @@ namespace TestProject1.Pages
 
         public IWebElement MainHeader => Driver.FindElement(By.ClassName("heading"));
         public IWebElement MainFooter => Driver.FindElement(By.XPath("/html/body/div[3]/div/div"));
-        public IWebElement LinkFooter => Driver.FindElement(By.LinkText("Elemental Selenium"));
 
         public void Open()
         {
@@ -24,6 +24,5 @@ namespace TestProject1.Pages
             Driver.Manage().Window.Maximize();
         }
 
-        
     }
 }

@@ -7,14 +7,13 @@ using OpenQA.Selenium;
 
 namespace TestProject1.Pages.ExternalPages
 {
-    public class GitHubProjectPage : Page
+    public class SeleniumPage : Page
     {
-        public const string PageUrl = "https://github.com/saucelabs/the-internet";
+        public const string PageUrl = "http://elementalselenium.com/";
 
-        public GitHubProjectPage(IWebDriver driver) : base(driver)
+        public SeleniumPage(IWebDriver driver) : base(driver)
         {
-        }
 
-        
+        }
     }
 }
