@@ -20,10 +20,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Scenarios\AddRemove.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Scenarios\MainPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MainPage.feature.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Scenarios\AddRemove.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddRemove.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 
 </Project>
