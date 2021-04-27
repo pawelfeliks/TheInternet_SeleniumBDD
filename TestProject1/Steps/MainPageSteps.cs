@@ -48,7 +48,6 @@ namespace TestProject1.Steps
         public void GivenIHaveScrolledToTheDown()
         {
             MainAppPage.ScrollToTheBottom();
-
         }
 
         [Then(@"The footer of the main page is '(.*)'")]
