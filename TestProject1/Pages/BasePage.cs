@@ -67,5 +67,13 @@ namespace TestProject1.Pages
             return abTestingPage;
         }
 
+        public AddRemovePage NavigateToAddRemovePage()
+        {
+            LinkABTesting.Click();
+            AddRemovePage addRemovePage = new AddRemovePage(Driver);
+
+            return addRemovePage;
+        }
+
     }
 }
