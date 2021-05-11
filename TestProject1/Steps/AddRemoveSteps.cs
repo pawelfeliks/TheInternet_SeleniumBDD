@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Reflection;
+using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -14,11 +15,10 @@ namespace TestProject1.Steps
 
     public class AddRemoveSteps
     {
-        private IWebDriver Driver { get; set; }
+        private IWebDriver Driver { get; set; } 
         private MainPage MainAppPage { get; set; }
         private AddRemovePage AddRemovePage { get; set; }
-        private GitHubProjectPage GitHubProjectPage { get; set; }
-        private SeleniumPage SeleniumPage { get; set; }
+        
 
         [BeforeScenario]
         public void ScenarioSetup()
@@ -37,38 +37,52 @@ namespace TestProject1.Steps
         [Then(@"The title of a page is '(.*)'")]
         public void ThenTheTitleOfAPageIs(string title)
         {
-            Assert.AreEqual(title, MainAppPage.GetPageTitle(), "Title of a home page is wrong");
+            Assert.AreEqual(title, AddRemovePage.MainHeader.Text, "Title of a home page is wrong");
         }
 
         [Given(@"I have clicked on the button Add Element")]
         public void GivenIHaveClickedOnTheButtonAddElement()
         {
-            ScenarioContext.Current.Pending();
+            AddRemovePage.ClickOnTheAddButton();
         }
 
         [Then(@"The button Delete appears")]
         public void ThenTheButtonDeleteAppears()
         {
-            ScenarioContext.Current.Pending();
+            Assert.True(AddRemovePage.DeleteButton.Displayed);
         }
 
         [Given(@"I have clicked on the button Add Element (.*) times")]
-        public void GivenIHaveClickedOnTheButtonAddElementTimes(int p0)
+        public void GivenIHaveClickedOnTheButtonAddElementTimes(int howMany)
         {
-            ScenarioContext.Current.Pending();
+            for (int i = 0; i < howMany; i++)
+            {
+                AddRemovePage.ClickOnTheAddButton();
+                Thread.Sleep(500);
+            }
         }
 
         [When(@"I click button Delete (.*) times")]
-        public void WhenIClickButtonDeleteTimes(int p0)
+        public void WhenIClickButtonDeleteTimes(int howMany)
         {
-            ScenarioContext.Current.Pending();
+            for (int i = 0; i < howMany; i++)
+            {
+                AddRemovePage.DeleteButtons[i].Click();
+                Thread.Sleep(500);
+            }
         }
 
         [Then(@"There should be (.*) buttons Delete")]
-        public void ThenThereShouldBeButtonsDelete(int p0)
+        public void ThenThereShouldBeButtonsDelete(int numberOfDeleteButtons)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(numberOfDeleteButtons, AddRemovePage.DeleteButtons.Count, "Something wrong");
         }
 
+        [AfterScenario]
+        public void ScenarioTeardown()
+        {
+            Driver.Close();
+            Driver.Dispose();
+        }
     }
 }
