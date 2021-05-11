@@ -7,10 +7,9 @@ using OpenQA.Selenium;
 
 namespace TestProject1.Pages
 {
-    public class Page
+    public class Page 
     {
-        protected IWebDriver Driver { get; set; }
-
+        protected IWebDriver Driver { get; set; } //driver jest wgrywany z biblioteką SeleniumWebDriverChrome
         public Page(IWebDriver driver)
         {
             Driver = driver;

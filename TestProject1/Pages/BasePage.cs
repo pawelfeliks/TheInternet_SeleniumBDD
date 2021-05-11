@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -11,7 +12,10 @@ namespace TestProject1.Pages
         public IWebElement LinkFooter => Driver.FindElement(By.LinkText("Elemental Selenium"));
         public IWebElement RightTopImage => Driver.FindElement(By.XPath("/html/body/div[2]/a/img"));
         public IWebElement LinkABTesting => Driver.FindElement(By.XPath("/html/body/div[2]/div/ul/li[1]/a"));
-        public BasePage(IWebDriver driver) : base(driver)
+        public IWebElement AddButton => Driver.FindElement(By.XPath("/html/body/div[2]/div/div/button"));
+        public ReadOnlyCollection<IWebElement> DeleteButtons => Driver.FindElements(By.ClassName("added-manually"));
+        public IWebElement DeleteButton => Driver.FindElement(By.ClassName("added-manually"));
+        public BasePage(IWebDriver driver) : base(driver) //skrót od klasy jeden poziom niżej (Page)
         {
         }
 
@@ -74,6 +78,7 @@ namespace TestProject1.Pages
 
             return addRemovePage;
         }
+
 
     }
 }
