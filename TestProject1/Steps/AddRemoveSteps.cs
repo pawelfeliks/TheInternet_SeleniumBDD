@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 using TestProject1.Pages;
-using TestProject1.Pages.ExternalPages;
+
 
 namespace TestProject1.Steps
 {
