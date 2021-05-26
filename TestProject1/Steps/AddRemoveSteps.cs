@@ -13,9 +13,8 @@ namespace TestProject1.Steps
     [Binding]
     [Scope(Feature = "AddRemove")]
 
-    public class AddRemoveSteps
+    public class AddRemoveSteps : MainSteps
     {
-        private IWebDriver Driver { get; set; } 
         private MainPage MainAppPage { get; set; }
         private AddRemovePage AddRemovePage { get; set; }
         
@@ -23,9 +22,8 @@ namespace TestProject1.Steps
         [BeforeScenario]
         public void ScenarioSetup()
         {
-            Driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            AddRemovePage = new AddRemovePage(Driver);
-            MainAppPage = new MainPage(Driver);
+            AddRemovePage = new AddRemovePage(App.Driver);
+            MainAppPage = new MainPage(App.Driver);
         }
 
         [Given(@"I have opened a page AddRemove")]
@@ -81,8 +79,8 @@ namespace TestProject1.Steps
         [AfterScenario]
         public void ScenarioTeardown()
         {
-            Driver.Close();
-            Driver.Dispose();
+            App.Driver.Close();
+            App.Driver.Dispose();
         }
     }
 }

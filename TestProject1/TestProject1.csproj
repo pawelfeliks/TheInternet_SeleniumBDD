@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Scenarios\ABTesting.feature.cs">
       <DesignTime>True</DesignTime>
     </Compile>
