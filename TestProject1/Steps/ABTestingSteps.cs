@@ -12,9 +12,8 @@ namespace TestProject1.Steps
     [Binding]
     [Scope(Feature = "ABTesting")]
 
-    public class ABTestingSteps
+    public class ABTestingSteps : MainSteps
     {
-        private IWebDriver Driver { get; set; }
         private MainPage MainAppPage { get; set; }
         private ABTestingPage ABTestingPage { get; set; }
         private GitHubProjectPage GitHubProjectPage { get; set; }
@@ -23,9 +22,8 @@ namespace TestProject1.Steps
         [BeforeScenario]
         public void ScenarioSetup()
         {
-            Driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            ABTestingPage = new ABTestingPage(Driver);
-            MainAppPage = new MainPage(Driver);
+            ABTestingPage = new ABTestingPage(App.Driver);
+            MainAppPage = new MainPage(App.Driver);
         }
 
 
@@ -92,8 +90,8 @@ namespace TestProject1.Steps
         [AfterScenario]
         public void ScenarioTeardown()
         {
-            Driver.Close();
-            Driver.Dispose();
+            App.Driver.Close();
+            App.Driver.Dispose();
         }
     }
 

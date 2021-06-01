@@ -1,8 +1,4 @@
-﻿using System.IO;
-using System.Reflection;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TestProject1.Pages;
 using TestProject1.Pages.ExternalPages;
@@ -12,10 +8,8 @@ namespace TestProject1.Steps
 {
     [Binding]
     [Scope(Feature = "MainPage")]
-
-    public class MainPageSteps
+    public class MainPageSteps : MainSteps
     {
-        private IWebDriver Driver { get; set; }
         private MainPage MainAppPage { get; set; }
         private GitHubProjectPage GitHubProjectPage { get; set; }
         private SeleniumPage SeleniumPage { get; set; }
@@ -23,8 +17,7 @@ namespace TestProject1.Steps
         [BeforeScenario]
         public void ScenarioSetup()
         {
-            Driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            MainAppPage = new MainPage(Driver);
+            MainAppPage = new MainPage(App.Driver);
         }
 
         [Given(@"I have opened main page")]
@@ -90,7 +83,7 @@ namespace TestProject1.Steps
         [AfterScenario]
         public void ScenarioTeardown()
         {
-            Driver.Close();
+            App.Driver.Close();
         }
     }
 }
