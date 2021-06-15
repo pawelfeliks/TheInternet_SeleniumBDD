@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Opera;
 
 namespace TestProject1
 {
@@ -36,7 +37,7 @@ namespace TestProject1
             }
             else if (AppContext.Browser == "opera")
             {
-
+                Driver = new OperaDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             }
             else
             {
