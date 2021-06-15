@@ -1,8 +1,4 @@
-﻿using System.IO;
-using System.Reflection;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TestProject1.Pages;
 using TestProject1.Pages.ExternalPages;
@@ -94,5 +90,4 @@ namespace TestProject1.Steps
             App.Driver.Dispose();
         }
     }
-
 }
