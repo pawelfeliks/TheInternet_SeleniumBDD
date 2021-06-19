@@ -4,6 +4,7 @@ namespace TestProject1.Pages
 {
     public class Page 
     {
+        public Page() { }
         protected IWebDriver Driver { get; set; } //driver jest wgrywany z biblioteką SeleniumWebDriverChrome
         public Page(IWebDriver driver)
         {

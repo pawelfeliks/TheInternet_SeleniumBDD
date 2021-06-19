@@ -32,7 +32,7 @@ namespace TestProject1.Steps
         [When(@"I click A/B Testing link")]
         public void WhenIClickABTestingLink()
         {
-            MainAppPage.ABTestingLink.Click();
+            ABTestingPage = MainAppPage.NavigateToSubPage<ABTestingPage>(MainAppPage.LinkABTesting);
         }
 
         [Then(@"The ABTesting page is opened")]
@@ -44,7 +44,7 @@ namespace TestProject1.Steps
         [Given(@"I have opened a page A/B Testing")]
         public void GivenIHaveOpenedAPageABTesting()
         {
-            ABTestingPage.Open();
+            ABTestingPage = MainAppPage.NavigateToSubPage<ABTestingPage>(MainAppPage.LinkABTesting); ;
         }
 
         [Then(@"the title of a page is '(.*)'")]

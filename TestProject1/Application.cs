@@ -12,7 +12,7 @@ namespace TestProject1
     public class Application
     {
         private readonly AppContext _appContext = new AppContext();
-        public AppContext AppContext => _appContext;
+        public AppContext AppContext => _appContext; 
 
         public IWebDriver Driver { get; set; }
 

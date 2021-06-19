@@ -9,14 +9,21 @@ namespace TestProject1.Pages
 {
     public class BasePage : Page
     {
+        public BasePage() { }
         public IWebElement LinkFooter => Driver.FindElement(By.LinkText("Elemental Selenium"));
         public IWebElement RightTopImage => Driver.FindElement(By.XPath("/html/body/div[2]/a/img"));
         public IWebElement LinkABTesting => Driver.FindElement(By.XPath("/html/body/div[2]/div/ul/li[1]/a"));
+        public IWebElement LinkAddRemove => Driver.FindElement(By.XPath("/html/body/div[2]/div/ul/li[2]/a"));
         public IWebElement AddButton => Driver.FindElement(By.XPath("/html/body/div[2]/div/div/button"));
         public ReadOnlyCollection<IWebElement> DeleteButtons => Driver.FindElements(By.ClassName("added-manually"));
         public IWebElement DeleteButton => Driver.FindElement(By.ClassName("added-manually"));
         public BasePage(IWebDriver driver) : base(driver) //skrót od klasy jeden poziom niżej (Page)
         {
+        }
+
+        public void Initialize(IWebDriver driver)
+        {
+            Driver = driver;
         }
 
         public void ScrollToTheBottom()
@@ -73,11 +80,24 @@ namespace TestProject1.Pages
 
         public AddRemovePage NavigateToAddRemovePage()
         {
-            LinkABTesting.Click();
+            LinkAddRemove.Click();
             AddRemovePage addRemovePage = new AddRemovePage(Driver);
 
             return addRemovePage;
         }
+
+        public T NavigateToSubPage<T>(IWebElement elementToClick) where T : BasePage, new()
+        {
+            elementToClick.Click();
+            Driver.SwitchTo().Window((Driver.WindowHandles.Last())); // odpowiednie okno
+            T subPage = new T();
+            subPage.Initialize(Driver);
+            // waitTillPageIsLoaded(); 
+
+            return subPage;
+            // NavigateToSubPage<AddRemovePage>;
+        }
+        
 
     }
 }

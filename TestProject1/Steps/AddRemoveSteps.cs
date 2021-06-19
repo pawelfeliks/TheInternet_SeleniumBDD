@@ -25,7 +25,7 @@ namespace TestProject1.Steps
         [Given(@"I have opened a page AddRemove")]
         public void GivenIHaveOpenedAPageAddRemove()
         {
-            AddRemovePage.Open();
+            AddRemovePage = MainAppPage.NavigateToSubPage<AddRemovePage>(MainAppPage.LinkAddRemove);
         }
 
         [Then(@"The title of a page is '(.*)'")]

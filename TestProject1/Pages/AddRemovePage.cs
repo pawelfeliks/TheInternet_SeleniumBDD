@@ -4,6 +4,7 @@ namespace TestProject1.Pages
 {
     public class AddRemovePage : BasePage
     {
+        public AddRemovePage() { }
         public const string PageTitle = "The Internet";
         public AddRemovePage(IWebDriver driver) : base(driver) {} //przekazanie drivera do podstrony
 
