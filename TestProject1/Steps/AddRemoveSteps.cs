@@ -1,9 +1,5 @@
-﻿using System.IO;
-using System.Reflection;
-using System.Threading;
+﻿using System.Threading;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 using TestProject1.Pages;
 
