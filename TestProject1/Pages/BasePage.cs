@@ -12,9 +12,6 @@ namespace TestProject1.Pages
         public BasePage() { }
         public IWebElement LinkFooter => Driver.FindElement(By.LinkText("Elemental Selenium"));
         public IWebElement RightTopImage => Driver.FindElement(By.XPath("/html/body/div[2]/a/img"));
-        public IWebElement LinkABTesting => Driver.FindElement(By.XPath("/html/body/div[2]/div/ul/li[1]/a"));
-        public IWebElement LinkAddRemove => Driver.FindElement(By.XPath("/html/body/div[2]/div/ul/li[2]/a"));
-        public IWebElement AddButton => Driver.FindElement(By.XPath("/html/body/div[2]/div/div/button"));
         public ReadOnlyCollection<IWebElement> DeleteButtons => Driver.FindElements(By.ClassName("added-manually"));
         public IWebElement DeleteButton => Driver.FindElement(By.ClassName("added-manually"));
         public BasePage(IWebDriver driver) : base(driver) //skrót od klasy jeden poziom niżej (Page)
