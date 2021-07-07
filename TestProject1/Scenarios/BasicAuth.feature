@@ -6,7 +6,7 @@ Scenario: User authentication by logging in
 		When I have entered "admin" in the "user name" field
 		And I have entered "admin" in the "password" field
 		And I press the "login" button
-		Then The header of the page is 'Basic Auth'
+		Then The title of the page is 'The Internet'
 
 Scenario: Image in the right top
 		Given I have opened a page BasicAuth
