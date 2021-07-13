@@ -13,7 +13,16 @@ namespace TestProject1
 
         public string GetAppSetting(string key)
         {
-            return ConfigurationManager.AppSettings[key];
+            try
+            {
+                return ConfigurationManager.AppSettings[key];
+            }
+
+            catch (SettingsPropertyNotFoundException)
+            {
+                throw new SettingsPropertyNotFoundException("There is no such setting");
+            }
+
         }
     }
 }

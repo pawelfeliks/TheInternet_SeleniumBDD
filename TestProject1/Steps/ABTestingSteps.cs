@@ -86,8 +86,7 @@ namespace TestProject1.Steps
         [AfterScenario]
         public void ScenarioTeardown()
         {
-            App.Driver.Close();
-            App.Driver.Dispose();
+            CloseApp();
         }
     }
 }

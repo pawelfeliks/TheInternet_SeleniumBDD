@@ -8,5 +8,11 @@
         {
             App = new Application();
         }
+
+        public void CloseApp()
+        {
+            App.Driver.Close();
+            App.Driver.Dispose();
+        }
     }
 }

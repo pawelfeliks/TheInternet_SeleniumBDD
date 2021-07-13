@@ -64,7 +64,7 @@ namespace TestProject1.Steps
         [Then(@"The image directs us to page '(.*)'")]
         public void ThenTheImageDirectsUsToPage(string gitHubProjectUrl)
         {
-            Assert.AreEqual(GitHubProjectPage.PageUrl, GitHubProjectPage.GetPageUrl());
+            Assert.AreEqual(GitHubProjectPage.PageUrl, GitHubProjectPage.GetPageUrl(), "The link is wrong");
         }
 
         [Given(@"I have clicked on the footer")]
@@ -76,14 +76,14 @@ namespace TestProject1.Steps
         [Then(@"The footer directs us to page '(.*)'")]
         public void ThenTheFooterDirectsUsToPage(string seleniumPageUrl)
         {
-            Assert.AreEqual(seleniumPageUrl, SeleniumPage.GetPageUrl());
+            Assert.AreEqual(seleniumPageUrl, SeleniumPage.GetPageUrl(), "The link is wrong");
         }
 
 
         [AfterScenario]
         public void ScenarioTeardown()
         {
-            App.Driver.Close();
+            CloseApp();
         }
     }
 }
