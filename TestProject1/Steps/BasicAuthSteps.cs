@@ -21,37 +21,32 @@ namespace TestProject1.Steps
             MainAppPage = new MainPage(App.Driver);
         }
 
+
+        [Given(@"I have opened a page BasicAuth using login and password")]
+        public void GivenIHaveOpenedAPageBasicAuthUsingLoginAndPassword()
+        {
+            BasicAuthPage = MainAppPage.NavigateToSubPage<BasicAuthPage>(MainAppPage.LinkBasicAuth);
+        }
+
+        [Then(@"The communicate is '(.*)' \?")]
+        public void ThenTheCommunicateIs(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
         [Given(@"I have opened a page BasicAuth")]
         public void GivenIHaveOpenedAPageBasicAuth()
         {
             BasicAuthPage = MainAppPage.NavigateToSubPage<BasicAuthPage>(MainAppPage.LinkBasicAuth);
         }
 
-        [When(@"I have entered ""(.*)"" in the ""(.*)"" field")]
-        public void WhenIHaveEnteredInTheField(string p0, string p1)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [When(@"I press the ""(.*)"" button")]
-        public void WhenIPressTheButton(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"The title of the page is '(.*)'")]
-        public void ThenTheHeaderOfThePageIs(string title)
-        {
-            Assert.AreEqual(title, BasicAuthPage.GetPageTitle(), "Title of a home page is wrong");
-        }
-
-        [Given(@"I have clicked on the image in the right top on the page ABTesting")]
+        [Given(@"I have clicked on the image in the right top on the page BasicAuth")]
         public void GivenIHaveClickedOnTheImageInTheRightTopOnThePageABTesting()
         {
             GitHubProjectPage = BasicAuthPage.NavigateToGitHubProjectPage();
         }
 
-        [Then(@"The image on the right top page ABTesting directs us to page '(.*)'")]
+        [Then(@"The image on the right top page BasicAuth directs us to page '(.*)'")]
         public void ThenTheImageOnTheRightTopPageABTestingDirectsUsToPage(string p0)
         {
             Assert.AreEqual(GitHubProjectPage.PageUrl, GitHubProjectPage.GetPageUrl());
@@ -62,6 +57,7 @@ namespace TestProject1.Steps
         {
             Assert.True(BasicAuthPage.Content.Text.Contains(text), "There is no such sentence");
         }
+
 
     }
 

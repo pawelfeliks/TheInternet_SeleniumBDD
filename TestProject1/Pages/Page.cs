@@ -10,7 +10,7 @@ namespace TestProject1.Pages
         public IWebElement RightTopImage => Driver.FindElement(By.XPath("/html/body/div[2]/a/img"));
         public IWebElement LinkABTesting => Driver.FindElement(By.XPath("/html/body/div[2]/div/ul/li[1]/a"));
         public IWebElement LinkAddRemove => Driver.FindElement(By.XPath("/html/body/div[2]/div/ul/li[2]/a"));
-        public IWebElement LinkBasicAuth => Driver.FindElement(By.XPath("/html/body/div[2]/div/ul/li[3]/a"));
+        public IWebElement LinkBasicAuth => Driver.FindElement(By.LinkText("http://admin:admin@https://the-internet.herokuapp.com/basic_auth"));
         public Page(IWebDriver driver)
         {
             Driver = driver;
