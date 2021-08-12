@@ -1,6 +1,9 @@
 ﻿Feature: AddRemove
 	This feature file stores requirements page Add Remove Elements
 
+Background: 
+	Given I have opened a Main Page
+
 Scenario: The title of a page AddRemove
 	Given I have opened a page AddRemove
 	Then The title of a page is 'Add/Remove Elements'

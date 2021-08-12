@@ -22,6 +22,12 @@ namespace TestProject1.Steps
             MainAppPage = new MainPage(App.Driver);
         }
 
+        [Given(@"I have opened a Main Page")]
+        public void GivenIHaveOpenedAMainPage()
+        {
+            MainAppPage.Open();
+        }
+
         [Given(@"I have opened a page AddRemove")]
         public void GivenIHaveOpenedAPageAddRemove()
         {

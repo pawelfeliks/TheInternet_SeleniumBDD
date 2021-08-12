@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7510c0b1-4f2d-474a-9840-b45bb8454fd5" name="Default Changelist" comment="" />
+    <list default="true" id="7510c0b1-4f2d-474a-9840-b45bb8454fd5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TestProject1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestProject1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestProject1/Pages/Page.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestProject1/Pages/Page.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestProject1/Steps/BasicAuthSteps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestProject1/Steps/BasicAuthSteps.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +13,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/TestProject1/Steps/BasicAuthSteps.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1rIgMkavZkNHw9KpXdsbzV8FsMN" />
   <component name="ProjectViewState">
@@ -30,12 +39,41 @@
       <option name="presentableId" value="Default" />
       <updated>1618668975660</updated>
       <workItem from="1618668986521" duration="105000" />
+      <workItem from="1628592466794" duration="210000" />
+      <workItem from="1628592801202" duration="131000" />
+      <workItem from="1628593323939" duration="259000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="241" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 346/346" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 346/346" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TestProject1 0% 346/346" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 346/346" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TestProject1 0% 346/346" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TestProject1 0% 346/346" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
 </project>
