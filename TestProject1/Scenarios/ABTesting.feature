@@ -1,8 +1,10 @@
 ﻿Feature: ABTesting
 	This feature file stores requirements for A/B Testing page
 
-Scenario: Open page ABTesting
+Background: 
 	Given I have opened main page
+
+Scenario: Open page ABTesting
 	When I click A/B Testing link
 	Then The ABTesting page is opened
 

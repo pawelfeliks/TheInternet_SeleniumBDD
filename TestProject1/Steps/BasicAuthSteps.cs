@@ -6,7 +6,7 @@ using TestProject1.Pages.ExternalPages;
 namespace TestProject1.Steps
 {
     [Binding]
-    [Scope(Feature = "ABTesting")]
+    [Scope(Feature = "BasicAuth")]
 
     public class BasicAuthSteps : MainSteps
     {
@@ -21,38 +21,36 @@ namespace TestProject1.Steps
             MainAppPage = new MainPage(App.Driver);
         }
 
+        [Given(@"I have opened main page")]
+        public void GivenIHaveOpenedMainPage()
+        {
+            MainAppPage.Open();
+        }
+
+
+        [Given(@"I have opened a page BasicAuth using login and password")]
+        public void GivenIHaveOpenedAPageBasicAuthUsingLoginAndPassword()
+        {
+            App.Driver.Navigate().GoToUrl("http://admin:admin@the-internet.herokuapp.com/basic_auth");        }
+
         [Given(@"I have opened a page BasicAuth")]
         public void GivenIHaveOpenedAPageBasicAuth()
         {
-            BasicAuthPage = MainAppPage.NavigateToSubPage<BasicAuthPage>(MainAppPage.LinkBasicAuth);
-        }
+            App.Driver.Navigate().GoToUrl("http://admin:admin@the-internet.herokuapp.com/basic_auth");        }
 
-        [When(@"I have entered ""(.*)"" in the ""(.*)"" field")]
-        public void WhenIHaveEnteredInTheField(string p0, string p1)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [When(@"I press the ""(.*)"" button")]
-        public void WhenIPressTheButton(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"The title of the page is '(.*)'")]
-        public void ThenTheHeaderOfThePageIs(string title)
-        {
-            Assert.AreEqual(title, BasicAuthPage.GetPageTitle(), "Title of a home page is wrong");
-        }
-
-        [Given(@"I have clicked on the image in the right top on the page ABTesting")]
-        public void GivenIHaveClickedOnTheImageInTheRightTopOnThePageABTesting()
+        [Given(@"I have clicked on the image in the right top on the page BasicAuth")]
+        public void GivenIHaveClickedOnTheImageInTheRightTopOnThePageBasicAuth()
         {
             GitHubProjectPage = BasicAuthPage.NavigateToGitHubProjectPage();
         }
 
-        [Then(@"The image on the right top page ABTesting directs us to page '(.*)'")]
-        public void ThenTheImageOnTheRightTopPageABTestingDirectsUsToPage(string p0)
+        [Then(@"The communicate is '(.*)' \?")]
+        public void ThenTheCommunicateIs(string text)
+        {
+            Assert.AreEqual(BasicAuthPage.Content.Text.Contains(text), "There is no such sentence");        }
+
+        [Then(@"The image on the right top page BasicAuth directs us to page '(.*)'")]
+        public void ThenTheImageOnTheRightTopPageBasicAuthDirectsUsToPage(string p0)
         {
             Assert.AreEqual(GitHubProjectPage.PageUrl, GitHubProjectPage.GetPageUrl());
         }
@@ -63,6 +61,11 @@ namespace TestProject1.Steps
             Assert.True(BasicAuthPage.Content.Text.Contains(text), "There is no such sentence");
         }
 
+        [AfterScenario]
+        public void ScenarioTeardown()
+        {
+            CloseApp();
+        }
     }
 
 }

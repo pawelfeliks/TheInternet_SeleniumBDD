@@ -13,7 +13,6 @@ namespace TestProject1.Pages
         public BasicAuthPage() { }
         public BasicAuthPage(IWebDriver driver) : base(driver) { } //przekazanie drivera do podstrony
         public IWebElement Content => Driver.FindElement(By.XPath("/html/body/div[2]/div/div/p"));
-        public IWebElement MainHeader => Driver.FindElement(By.XPath("/html/body/div[2]/div/div/p"));
 
         public const string PageUrl = "https://the-internet.herokuapp.com/basic_auth";
 

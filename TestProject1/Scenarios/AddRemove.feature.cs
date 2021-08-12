@@ -73,6 +73,15 @@ namespace TestProject1.Scenarios
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 4
+#line hidden
+#line 5
+ testRunner.Given("I have opened a Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The title of a page AddRemove")]
         public virtual void TheTitleOfAPageAddRemove()
@@ -80,7 +89,7 @@ namespace TestProject1.Scenarios
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The title of a page AddRemove", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 4
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -100,10 +109,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 5
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 8
  testRunner.Given("I have opened a page AddRemove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 6
+#line 9
  testRunner.Then("The title of a page is \'Add/Remove Elements\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -117,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Add Element button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 8
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -137,13 +149,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 9
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 12
  testRunner.Given("I have opened a page AddRemove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 10
+#line 13
  testRunner.And("I have clicked on the button Add Element", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 11
+#line 14
  testRunner.Then("The button Delete appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -162,7 +177,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("click", click);
             argumentsOfScenario.Add("left", left);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiple clicking on the buttons Add Element and Delete", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+#line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -182,16 +197,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 14
- testRunner.Given("I have opened a page AddRemove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 15
- testRunner.And(string.Format("I have clicked on the button Add Element {0} times", start), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 16
- testRunner.When(string.Format("I click button Delete {0} times", click), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 4
+this.FeatureBackground();
 #line hidden
 #line 17
+ testRunner.Given("I have opened a page AddRemove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 18
+ testRunner.And(string.Format("I have clicked on the button Add Element {0} times", start), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 19
+ testRunner.When(string.Format("I click button Delete {0} times", click), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 20
  testRunner.Then(string.Format("There should be {0} buttons Delete", left), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
