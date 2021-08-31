@@ -4,9 +4,6 @@
 Background: 
 	Given I have opened main page
 
-Scenario: User authentication by logging in
-		Given I have opened a page BasicAuth using login and password
-		Then The communicate is 'User has been authenticated' ?
 
 Scenario: Image in the right top
 		Given I have opened a page BasicAuth

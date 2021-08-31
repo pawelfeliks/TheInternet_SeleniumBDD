@@ -44,11 +44,6 @@ namespace TestProject1.Steps
             GitHubProjectPage = BasicAuthPage.NavigateToGitHubProjectPage();
         }
 
-        [Then(@"The communicate is '(.*)' \?")]
-        public void ThenTheCommunicateIs(string text)
-        {
-            Assert.AreEqual(BasicAuthPage.Content.Text.Contains(text), "There is no such sentence");        }
-
         [Then(@"The image on the right top page BasicAuth directs us to page '(.*)'")]
         public void ThenTheImageOnTheRightTopPageBasicAuthDirectsUsToPage(string p0)
         {
